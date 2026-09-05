@@ -119,7 +119,7 @@ nav{display:flex;gap:1.25rem;align-items:center;flex-wrap:nowrap;}
 .arch-node{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:14px 8px;color:#cbd5e1;font-size:.82rem;font-weight:bold;}
 
 /* SCADA SCREENSHOT SHOWCASE */
-.scada-shot{width:100%;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,.25);border:1px solid var(--border);}
+.scada-shot{display:block;width:100%;max-width:620px;margin:0 auto;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,.25);border:1px solid var(--border);}
 .scada-feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:40px;}
 .scada-feature{background:#fff;border:1px solid var(--border);border-radius:8px;padding:18px;text-align:center;}
 .scada-feature .fi{width:40px;height:40px;border-radius:8px;background:var(--off-white);color:var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;}
@@ -669,7 +669,7 @@ footer h4{color:#fff;font-size:.9rem;letter-spacing:1px;text-transform:uppercase
             <div class="input-group">
               <label>Phone Number</label>
               <div class="phone-group">
-                <select id="countryCode" name="country_code"><option value="+91">+91 (IN)</option><option value="+1">+1 (US)</option><option value="+44">+44 (UK)</option></select>
+                <select id="countryCode" name="country_code"></select>
                 <input type="tel" id="userPhone" name="phone" placeholder="98984 37843" required>
               </div>
               <div id="phoneError" style="color:#ef4444;font-size:.8rem;margin-top:4px;display:none;"></div>
@@ -736,6 +736,58 @@ function showPage(pageId, element){
   lucide.createIcons();
 }
 
+/* ---------- FULL COUNTRY CODE LIST ---------- */
+const COUNTRY_CODES = [
+["Afghanistan","+93"],["Albania","+355"],["Algeria","+213"],["Andorra","+376"],["Angola","+244"],
+["Argentina","+54"],["Armenia","+374"],["Australia","+61"],["Austria","+43"],["Azerbaijan","+994"],
+["Bahamas","+1"],["Bahrain","+973"],["Bangladesh","+880"],["Barbados","+1"],["Belarus","+375"],
+["Belgium","+32"],["Belize","+501"],["Benin","+229"],["Bhutan","+975"],["Bolivia","+591"],
+["Bosnia and Herzegovina","+387"],["Botswana","+267"],["Brazil","+55"],["Brunei","+673"],["Bulgaria","+359"],
+["Burkina Faso","+226"],["Burundi","+257"],["Cambodia","+855"],["Cameroon","+237"],["Canada","+1"],
+["Cape Verde","+238"],["Central African Republic","+236"],["Chad","+235"],["Chile","+56"],["China","+86"],
+["Colombia","+57"],["Comoros","+269"],["Congo","+242"],["Costa Rica","+506"],["Croatia","+385"],
+["Cuba","+53"],["Cyprus","+357"],["Czech Republic","+420"],["Denmark","+45"],["Djibouti","+253"],
+["Dominican Republic","+1"],["Ecuador","+593"],["Egypt","+20"],["El Salvador","+503"],["Estonia","+372"],
+["Ethiopia","+251"],["Fiji","+679"],["Finland","+358"],["France","+33"],["Gabon","+241"],
+["Gambia","+220"],["Georgia","+995"],["Germany","+49"],["Ghana","+233"],["Greece","+30"],
+["Guatemala","+502"],["Guinea","+224"],["Guyana","+592"],["Haiti","+509"],["Honduras","+504"],
+["Hong Kong","+852"],["Hungary","+36"],["Iceland","+354"],["India","+91"],["Indonesia","+62"],
+["Iran","+98"],["Iraq","+964"],["Ireland","+353"],["Israel","+972"],["Italy","+39"],
+["Jamaica","+1"],["Japan","+81"],["Jordan","+962"],["Kazakhstan","+7"],["Kenya","+254"],
+["Kuwait","+965"],["Kyrgyzstan","+996"],["Laos","+856"],["Latvia","+371"],["Lebanon","+961"],
+["Lesotho","+266"],["Liberia","+231"],["Libya","+218"],["Liechtenstein","+423"],["Lithuania","+370"],
+["Luxembourg","+352"],["Macau","+853"],["Madagascar","+261"],["Malawi","+265"],["Malaysia","+60"],
+["Maldives","+960"],["Mali","+223"],["Malta","+356"],["Mauritania","+222"],["Mauritius","+230"],
+["Mexico","+52"],["Moldova","+373"],["Monaco","+377"],["Mongolia","+976"],["Montenegro","+382"],
+["Morocco","+212"],["Mozambique","+258"],["Myanmar","+95"],["Namibia","+264"],["Nepal","+977"],
+["Netherlands","+31"],["New Zealand","+64"],["Nicaragua","+505"],["Niger","+227"],["Nigeria","+234"],
+["North Macedonia","+389"],["Norway","+47"],["Oman","+968"],["Pakistan","+92"],["Panama","+507"],
+["Papua New Guinea","+675"],["Paraguay","+595"],["Peru","+51"],["Philippines","+63"],["Poland","+48"],
+["Portugal","+351"],["Qatar","+974"],["Romania","+40"],["Russia","+7"],["Rwanda","+250"],
+["Saudi Arabia","+966"],["Senegal","+221"],["Serbia","+381"],["Sierra Leone","+232"],["Singapore","+65"],
+["Slovakia","+421"],["Slovenia","+386"],["Somalia","+252"],["South Africa","+27"],["South Korea","+82"],
+["South Sudan","+211"],["Spain","+34"],["Sri Lanka","+94"],["Sudan","+249"],["Suriname","+597"],
+["Sweden","+46"],["Switzerland","+41"],["Syria","+963"],["Taiwan","+886"],["Tajikistan","+992"],
+["Tanzania","+255"],["Thailand","+66"],["Togo","+228"],["Trinidad and Tobago","+1"],["Tunisia","+216"],
+["Turkey","+90"],["Turkmenistan","+993"],["Uganda","+256"],["Ukraine","+380"],["United Arab Emirates","+971"],
+["United Kingdom","+44"],["United States","+1"],["Uruguay","+598"],["Uzbekistan","+998"],["Venezuela","+58"],
+["Vietnam","+84"],["Yemen","+967"],["Zambia","+260"],["Zimbabwe","+263"]
+];
+
+function populateCountryCodes(){
+  const sel = document.getElementById('countryCode');
+  if(!sel) return;
+  sel.innerHTML = '';
+  COUNTRY_CODES.forEach(([name, code]) => {
+    const opt = document.createElement('option');
+    opt.value = code;
+    opt.textContent = `${code} ${name}`;
+    if(name === 'India') opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+populateCountryCodes();
+
 const contactForm = document.getElementById('contactForm');
 const phoneInput = document.getElementById('userPhone');
 const phoneError = document.getElementById('phoneError');
@@ -745,9 +797,17 @@ contactForm.addEventListener('submit', async function(e){
   e.preventDefault();
   const phoneVal = phoneInput.value.trim().replace(/\D/g,'');
   const code = document.getElementById('countryCode').value;
-  if(code === "+91" && (phoneVal.length !== 10 || !/^[6-9]/.test(phoneVal))){
+  let phoneValid = true;
+  let phoneMsg = "Please enter a valid phone number";
+  if(code === "+91"){
+    phoneValid = phoneVal.length === 10 && /^[6-9]/.test(phoneVal);
+    phoneMsg = "Please enter a valid 10-digit mobile number";
+  } else {
+    phoneValid = phoneVal.length >= 6 && phoneVal.length <= 14;
+  }
+  if(!phoneValid){
     phoneInput.classList.add('error');
-    phoneError.innerText = "Please enter a valid 10-digit mobile number";
+    phoneError.innerText = phoneMsg;
     phoneError.style.display = 'block';
     phoneInput.focus();
     return;
