@@ -7,7 +7,7 @@
     <!-- Lucide Icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/umd/lucide.min.js"></script>
     <style>
-        /* --- BRAND DESIGN SYSTEM & RESET --- */
+        /* --- BRAND DESIGN SYSTEM --- */
         :root {
             --navy-deep: #0b1120;
             --navy-slate: #0f172a;
@@ -22,6 +22,7 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* --- GLOBAL ARCHITECTURE --- */
         html, body {
             margin: 0;
             padding: 0;
@@ -44,17 +45,17 @@
         .utility-strip {
             background: var(--navy-deep);
             color: #cbd5e1;
-            padding: 8px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 0.85rem;
             border-bottom: 1px solid rgba(255,255,255,0.05);
+            z-index: 1002;
             position: relative;
-            z-index: 1001;
         }
         .u-left { display: flex; gap: 25px; }
-        .u-left a { display: flex; align-items: center; gap: 8px; color: #cbd5e1; }
+        .u-left a { display: flex; align-items: center; gap: 8px; color: #cbd5e1; font-weight: 600; }
         .u-left a:hover { color: #60a5fa; }
 
         /* --- STICKY HEADER --- */
@@ -71,7 +72,7 @@
         .nav-inner {
             width: 100%;
             padding: 0 5%;
-            height: 90px;
+            height: 95px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -82,12 +83,12 @@
         .logo-sub { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--navy-slate); font-weight: bold; margin-top: -2px; }
 
         nav { display: flex; gap: 2rem; align-items: center; }
-        .nav-link { font-weight: bold; font-size: 1rem; color: var(--navy-slate); position: relative; padding: 10px 0; }
+        .nav-link { font-weight: bold; font-size: 1.05rem; color: var(--navy-slate); position: relative; padding: 10px 0; }
         .nav-link.active { color: var(--ind-blue); }
         .nav-link.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--ind-blue); }
 
-        /* --- FIXED: HERO BUTTONS CONTRAST --- */
-        .btn-primary, .hero-btn-primary, a.btn-primary {
+        /* --- FIXED HERO BUTTONS (HIGH CONTRAST) --- */
+        .hero .btn-primary {
             background-color: #1d4ed8 !important;
             color: #ffffff !important;
             border: 2px solid #1d4ed8 !important;
@@ -100,9 +101,7 @@
             border-radius: 8px !important;
             box-shadow: 0 4px 15px rgba(29, 78, 216, 0.3);
         }
-        .btn-primary:hover { background-color: #1e40af !important; border-color: #1e40af !important; transform: translateY(-2px); }
-
-        .btn-outline, .hero-btn-outline, a.btn-outline {
+        .hero .btn-outline {
             background-color: transparent !important;
             color: #ffffff !important;
             border: 2px solid #ffffff !important;
@@ -114,7 +113,7 @@
             padding: 14px 28px !important;
             border-radius: 8px !important;
         }
-        .btn-outline:hover { background-color: #ffffff !important; color: #0b1120 !important; transform: translateY(-2px); }
+        .hero .btn-outline:hover { background-color: #ffffff !important; color: #0b1120 !important; }
 
         /* --- SPA VIEW CONTROLLER --- */
         .page-view { display: none; width: 100%; animation: fadeIn 0.6s ease; }
@@ -135,14 +134,17 @@
         .hero p { font-size: 1.5rem; color: var(--text-dim); margin-bottom: 45px; max-width: 800px; }
 
         /* --- LAYOUT WRAPPERS --- */
-        .full-width { width: 100%; padding: 100px 5%; }
+        .full-width { width: 100%; padding: 120px 5%; }
         .bg-alt { background: var(--bg-off-white); }
         .section-tag { color: var(--ind-blue); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; display: block; }
         .section-title { font-size: 3.5rem; margin-bottom: 60px; }
 
-        /* --- CONTROL PANELS (50/50) --- */
+        /* --- CONTROL PANELS (50/50 SPLIT) --- */
         .split-50 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .split-img { width: 100%; max-height: 480px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .list-tech { list-style: none; padding: 0; margin-top: 30px; }
+        .list-tech li { padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 15px; font-weight: bold; }
+        .list-tech li::before { content: '✓'; color: var(--ind-blue); font-size: 1.2rem; }
 
         /* --- INDUSTRY CARD GRID --- */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
@@ -154,41 +156,30 @@
 
         /* --- CONTACT FORM --- */
         .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; }
-        .contact-info-card { background: var(--navy-deep); color: white; padding: 50px; border-radius: 15px; }
+        .contact-info-card { background: var(--navy-deep); color: white; padding: 50px; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .contact-info-card h2 { color: white; margin-bottom: 30px; font-size: 2.2rem; }
         .info-detail { display: flex; gap: 20px; margin-bottom: 30px; align-items: flex-start; }
         .info-icon { background: var(--ind-blue); padding: 12px; border-radius: 50%; color: white; display: flex; }
-        
+        .btn-whatsapp { display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: white !important; padding: 14px 25px; border-radius: 8px; font-weight: bold; text-transform: uppercase; margin-top: 20px; }
+
         .form-card { background: white; padding: 50px; border-radius: 15px; border: 1px solid var(--border); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
         .input-group { display: flex; flex-direction: column; gap: 8px; }
         .input-group label { font-weight: bold; font-size: 0.95rem; }
-        .input-group input, .input-group select, .input-group textarea { 
-            padding: 15px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; outline: none; background: var(--bg-off-white); 
-        }
+        .input-group input, .input-group select, .input-group textarea { padding: 15px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; outline: none; background: var(--bg-off-white); }
         .input-group input.error { border-color: #ef4444 !important; background: #fff1f2 !important; }
-        
         .phone-group { display: flex; gap: 10px; }
         .phone-group select { width: 140px; }
         .phone-group input { flex-grow: 1; }
-
         .btn-submit { background: var(--ind-blue); color: white; border: none; padding: 18px; font-weight: bold; text-transform: uppercase; border-radius: 8px; cursor: pointer; transition: 0.3s; width: 100%; font-size: 1rem; margin-top: 10px; }
         .btn-submit:hover { background: #1e40af; transform: translateY(-2px); }
 
-        /* --- SUCCESS MODAL --- */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(5px);
-            z-index: 10000; display: none; align-items: center; justify-content: center;
-        }
-        .modal-card { background: white; width: 100%; max-width: 480px; padding: 45px; border-radius: 16px; text-align: center; }
-        .modal-icon { width: 64px; height: 64px; background: var(--ind-green); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; }
-
-        /* --- FIXED: CHATBOT ARCHITECTURE --- */
+        /* --- CHATBOT UI --- */
         #aioChatTrigger {
             position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; border-radius: 50%;
             background: #1d4ed8; color: #fff; display: flex; align-items: center; justify-content: center;
             box-shadow: 0 10px 25px rgba(29,78,216,0.4); cursor: pointer; z-index: 999999; border: none;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.3s;
         }
         #aioChatTrigger:hover { transform: scale(1.1); }
 
@@ -197,36 +188,36 @@
             background: #ffffff; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.35);
             border: 1px solid #cbd5e1; display: none; flex-direction: column; overflow: hidden;
             z-index: 999999; font-family: 'Cambria', Georgia, serif;
-            animation: chatSlideUp 0.4s ease-out;
         }
-        @keyframes chatSlideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
         .chat-header { background: var(--navy-slate); color: white; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; }
         .chat-title { font-weight: bold; font-size: 1.1rem; }
         .chat-status { font-size: 0.75rem; color: #4ade80; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
 
-        #chat-messages { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #fdfdfd; scroll-behavior: smooth; }
+        #chatMessages { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #fdfdfd; scroll-behavior: smooth; }
         .chat-bubble { max-width: 85%; padding: 12px 16px; border-radius: 12px; font-size: 0.95rem; line-height: 1.5; }
         .bot-bubble { background: #f1f5f9; color: var(--navy-slate); align-self: flex-start; border-bottom-left-radius: 2px; }
         .user-bubble { background: var(--ind-blue); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
 
         .chat-footer { padding: 15px; border-top: 1px solid #eee; display: flex; gap: 10px; background: #fff; }
-        #chat-input { flex-grow: 1; border: 1px solid #ddd; padding: 10px 14px; border-radius: 8px; outline: none; font-family: inherit; }
-        .chat-send-btn { background: var(--ind-blue); color: white; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; display: flex; }
+        #chatUserInput { flex-grow: 1; border: 1px solid #ddd; padding: 10px 14px; border-radius: 8px; outline: none; font-family: inherit; }
+        .chat-send-btn { background: var(--ind-blue); color: white; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
 
         .chat-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
         .opt-btn { background: #fff; border: 1px solid var(--ind-blue); color: var(--ind-blue); padding: 8px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: bold; cursor: pointer; transition: 0.2s; }
         .opt-btn:hover { background: var(--ind-blue); color: white; }
 
         .dispatch-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; margin-top: 10px; text-align: center; }
-        .dispatch-link { display: block; padding: 12px; border-radius: 6px; font-weight: bold; margin-bottom: 8px; color: white !important; }
+        .dispatch-btn { display: block; padding: 12px; border-radius: 6px; font-weight: bold; margin-bottom: 8px; text-decoration: none; }
+
+        /* --- SUCCESS MODAL --- */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(5px); z-index: 10000; display: none; align-items: center; justify-content: center; }
+        .modal-card { background: white; max-width: 480px; padding: 45px; border-radius: 16px; text-align: center; }
 
         /* --- FOOTER --- */
         footer { background: var(--navy-deep); color: white; padding: 100px 5% 40px; border-top: 5px solid var(--ind-blue); }
         .footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
-        .footer-logo { font-size: 2rem; font-weight: 800; color: var(--ind-blue); }
-        .f-links { list-style: none; padding: 0; }
-        .f-links li { margin-bottom: 15px; opacity: 0.7; }
+        .footer-logo { font-size: 2.2rem; font-weight: 800; color: var(--ind-blue); }
         .bottom-bar { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; display: flex; justify-content: space-between; opacity: 0.6; font-size: 0.95rem; }
 
         @media (max-width: 1100px) {
@@ -241,8 +232,8 @@
     <!-- UTILITY STRIP -->
     <div class="utility-strip">
         <div class="u-left">
-            <a href="mailto:info@aioautomation.in"><i data-lucide="mail" size="14"></i> info@aioautomation.in</a>
-            <a href="tel:+919898437843"><i data-lucide="phone" size="14"></i> +91 9898437843</a>
+            <a href="mailto:info@aioautomation.in"><i data-lucide="mail" size="16"></i> info@aioautomation.in</a>
+            <a href="tel:+919898437843"><i data-lucide="phone" size="16"></i> +91 9898437843</a>
         </div>
         <div class="u-right">📍 Anand, Gujarat | Serving Globally</div>
     </div>
@@ -267,13 +258,12 @@
     </header>
 
     <main>
-        
         <!-- PAGE: HOME -->
         <div id="home" class="page-view active">
             <section class="hero">
                 <div class="hero-inner">
                     <h1>Next-Gen Industrial <span>Automation</span> <br>& System Integration</h1>
-                    <p>High-performance PLC, SCADA, and Machine Vision architecture. Engineering intelligence from first sensor to final dashboard for global production facilities.</p>
+                    <p>Turnkey PLC, SCADA, and Electrical architecture for Pharmaceutical, F&B, and Process industries. Engineering intelligence from first sensor to final dashboard.</p>
                     <div style="display: flex; gap: 20px;">
                         <a onclick="showPage('solutions')" class="btn-primary" style="color: #ffffff !important;">Explore Solutions</a>
                         <a onclick="showPage('contact')" class="btn-outline" style="color: #ffffff !important;">Consult An Engineer</a>
@@ -286,11 +276,11 @@
                     <div>
                         <span class="section-tag">HERITAGE & MISSION</span>
                         <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Engineering Precision, Total Reliability & Data Integrity</h2>
-                        <p>AIO Automation bridges the gap between complex hardware logic and regulatory compliance. Established in Anand, Gujarat, we provide multidisciplinary solutions across Siemens, Rockwell, and Mitsubishi FX environments.</p>
+                        <p>AIO Automation bridges the gap between complex hardware logic and regulatory compliance. We provide deep engineering capabilities across Siemens (TIA Portal), Rockwell, and Mitsubishi environments.</p>
                         <div class="grid-3" style="margin-top: 40px; grid-template-columns: 1fr 1fr;">
                             <div style="display: flex; gap: 15px;">
                                 <i data-lucide="shield-check" color="var(--ind-blue)" size="28"></i>
-                                <div><strong>Compliance Mastery</strong><p style="font-size: 0.95rem; margin-top: 5px;">Specialists in GAMP 5 & 21 CFR Part 11 protocols.</p></div>
+                                <div><strong>Validated Control</strong><p style="font-size: 0.95rem; margin-top: 5px;">Experts in GAMP 5 & 21 CFR Part 11 protocols.</p></div>
                             </div>
                             <div style="display: flex; gap: 15px;">
                                 <i data-lucide="zap" color="var(--ind-blue)" size="28"></i>
@@ -299,7 +289,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" class="split-img" alt="Technical Integration">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" class="split-img" alt="Engineered Panels">
                     </div>
                 </div>
             </section>
@@ -309,24 +299,24 @@
         <div id="about" class="page-view">
             <section class="full-width bg-alt">
                 <div style="max-width: 1200px; margin: 0 auto 80px;">
-                    <span class="section-tag">ABOUT OUR FOUNDATION</span>
+                    <span class="section-tag">OUR HERITAGE & MISSION</span>
                     <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Transforming Production Through Intelligent Automation</h2>
                     <p>Established in Anand, Gujarat, AIO Automation is a multidisciplinary engineering firm dedicated to transforming industrial production through rigorous panel engineering and regulatory-compliant software architectures.</p>
                     <p>We provide deep engineering capabilities across Siemens (TIA Portal), Rockwell CompactLogix, and Mitsubishi platforms. Our vision is to provide a single point of accountability for your entire automation lifecycle.</p>
                 </div>
                 <div class="grid-3">
-                    <div class="ind-card card-body">
-                        <i data-lucide="layers" size="48" color="var(--ind-blue)"></i>
+                    <div class="card card-body">
+                        <i data-lucide="layers" size="48"></i>
                         <h3>Turnkey Panel Building</h3>
                         <p>Custom Rittal/Schneider enclosures, VFD/Servo integration, clean labeling, and 100% FAT verification.</p>
                     </div>
-                    <div class="ind-card card-body">
-                        <i data-lucide="shield-check" size="48" color="var(--ind-blue)"></i>
+                    <div class="card card-body">
+                        <i data-lucide="shield-check" size="48"></i>
                         <h3>Advanced Software</h3>
                         <p>21 CFR Part 11 audit trails, SQL batch logging, automated reporting, and secure data archiving.</p>
                     </div>
-                    <div class="ind-card card-body">
-                        <i data-lucide="eye" size="48" color="var(--ind-blue)"></i>
+                    <div class="card card-body">
+                        <i data-lucide="eye" size="48"></i>
                         <h3>Quality Inspection</h3>
                         <p>Industrial machine vision, barcode/OCR verification, and precision servo-based defect rejection.</p>
                     </div>
@@ -340,21 +330,21 @@
                 <span class="section-tag">Engineering Portfolio</span>
                 <h2 class="section-title">Core Automation Solutions</h2>
                 <div class="grid-3">
-                    <div class="ind-card">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" class="card-img" alt="PLC">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body">
                             <h3>PLC & HMI Programming</h3>
-                            <p>Development of high-availability logic for Siemens, Allen-Bradley, and Mitsubishi platforms.</p>
+                            <p>Development of logic for Siemens TIA Portal, Allen-Bradley Studio 5000, and Mitsubishi platforms.</p>
                         </div>
                     </div>
-                    <div class="ind-card">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" class="card-img" alt="SCADA">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body">
                             <h3>SCADA & Batch Logging</h3>
-                            <p>Centralized monitoring with SQL database integration and process historians for regulatory compliance.</p>
+                            <p>Centralized monitoring with SQL database integration and historians for regulatory compliance.</p>
                         </div>
                     </div>
-                    <div class="ind-card">
+                    <div class="card">
                         <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=80" class="card-img" alt="Vision">
                         <div class="card-body">
                             <h3>Machine Vision Systems</h3>
@@ -365,57 +355,35 @@
             </section>
         </div>
 
-        <!-- PAGE: CONTROL PANELS -->
-        <div id="panels" class="page-view">
-            <section class="full-width bg-alt">
-                <div class="split-50">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" class="split-img" alt="Control Panel">
-                    </div>
-                    <div>
-                        <span class="section-tag">MANUFACTURING DIVISION</span>
-                        <h2 style="font-size: 3rem; margin-bottom: 25px;">Premium Control Panel Fabrication</h2>
-                        <p>Our workshop produces high-density electrical enclosures using Rittal and Schneider hardware. We emphasize clean routing, automated labeling, and 100% FAT verification.</p>
-                        <ul class="list-tech">
-                            <li>PLC, VFD & Servo Drive Control Cabinets</li>
-                            <li>MCC & PCC Power Distribution Centers</li>
-                            <li>Automatic Ferrule Labeling & Documentation</li>
-                            <li>Integrated High-Speed Safety Relay Logic</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </div>
-
         <!-- PAGE: INDUSTRIES -->
         <div id="industries" class="page-view">
-            <section class="full-width">
+            <section class="full-width bg-alt">
                 <div style="text-align: center; margin-bottom: 70px;">
                     <span class="section-tag">Vertical Expertise</span>
                     <h2 style="font-size: 3.5rem;">Industries We Transform</h2>
                 </div>
                 <div class="grid-3">
-                    <div class="ind-card">
+                    <div class="card">
                         <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body"><h3>Pharma - OSD</h3><p>Granulation, Tablet Compression, and Blister Packing automation.</p></div>
                     </div>
-                    <div class="ind-card">
+                    <div class="card">
                         <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body"><h3>Pharma - Injectables</h3><p>Cleanroom filling lines, isolators, and 21 CFR validation.</p></div>
                     </div>
-                    <div class="ind-card">
+                    <div class="card">
                         <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body"><h3>FMCG & Bottling</h3><p>High-speed sorting, conveyor control, and robotic palletizing.</p></div>
                     </div>
-                    <div class="ind-card">
+                    <div class="card">
                         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body"><h3>Oil & Gas</h3><p>SIL-rated ESD systems and hazardous area control panels.</p></div>
                     </div>
-                    <div class="ind-card">
+                    <div class="card">
                         <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body"><h3>Printing & Packaging</h3><p>Web tension control and continuous cartoning logic.</p></div>
                     </div>
-                    <div class="ind-card">
+                    <div class="card">
                         <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body"><h3>Machine Vision</h3><p>OCR and 2D Matrix verification for 100% QA.</p></div>
                     </div>
@@ -453,25 +421,17 @@
                                 <div class="input-group"><label>Company</label><input type="text" name="company" required></div>
                             </div>
                             <div class="form-row">
-                                <div class="input-group"><label>Email Address</label><input type="email" id="userEmail" name="email" required></div>
+                                <div class="input-group"><label>Email</label><input type="email" id="userEmail" name="email" required></div>
                                 <div class="input-group">
                                     <label>Phone Number</label>
                                     <div class="phone-group">
-                                        <select id="countryCode" name="country_code">
-                                            <option value="+91">+91 (IN)</option><option value="+1">+1 (US)</option><option value="+44">+44 (UK)</option>
-                                        </select>
+                                        <select id="countryCode" name="country_code"><option value="+91">+91 (IN)</option><option value="+1">+1 (US)</option></select>
                                         <input type="tel" id="userPhone" name="phone" placeholder="98984 37843" required>
                                     </div>
                                     <div id="phoneError" style="color: #ef4444; font-size: 0.8rem; margin-top: 4px; display: none;"></div>
                                 </div>
                             </div>
-                            <div class="input-group" style="margin-bottom:20px;">
-                                <label>Requirement</label>
-                                <select name="requirement">
-                                    <option>PLC & SCADA Development</option><option>Control Panel Manufacturing</option><option>Machine Vision System</option><option>Retrofit / Modernization</option>
-                                </select>
-                            </div>
-                            <div class="input-group" style="margin-bottom:30px;"><label>Scope</label><textarea name="message" rows="4"></textarea></div>
+                            <div class="input-group" style="margin-bottom:30px;"><label>Scope</label><textarea name="message" rows="4" placeholder="Briefly describe your requirements..."></textarea></div>
                             <button type="submit" id="submitBtn" class="btn-submit">Submit Technical Request</button>
                         </form>
                     </div>
@@ -479,47 +439,6 @@
             </section>
         </div>
     </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-main">
-            <div>
-                <div class="footer-logo">AIO <span>AUTOMATION</span></div>
-                <p style="opacity: 0.6; margin-top: 20px;">Precision engineering and intelligent automation for modern manufacturing. Trusted partner for high-compliance infrastructure.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Solutions</h4>
-                <ul class="f-links"><li>PLC Programming</li><li>SCADA Systems</li><li>Machine Vision</li><li>Panel Building</li></ul>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul class="f-links">
-                    <li onclick="showPage('about')">About Us</li>
-                    <li onclick="showPage('industries')">Industries</li>
-                    <li onclick="showPage('contact')">Contact Us</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Operations</h4>
-                <p style="opacity: 0.7;">Anand, Gujarat, India</p>
-                <p style="opacity: 0.7;">Service hotline: +91 9898437843</p>
-            </div>
-        </div>
-        <div class="bottom-bar">
-            <div>&copy; 2024 AIO Automation Solutions. All Rights Reserved.</div>
-            <div>Engineering Excellence Through Data Integrity</div>
-        </div>
-    </footer>
-
-    <!-- SUCCESS MODAL -->
-    <div class="modal-overlay" id="successModal">
-        <div class="modal-card">
-            <div class="modal-icon"><i data-lucide="check" size="32"></i></div>
-            <h3>Inquiry Submitted Successfully</h3>
-            <p>Your specifications have been forwarded to engineering at info@aioautomation.in. We will respond within 24 hours.</p>
-            <button class="btn-primary" style="border:none; cursor:pointer;" onclick="closeModal()">Close</button>
-        </div>
-    </div>
 
     <!-- CHATBOT WIDGET -->
     <button id="aioChatTrigger" onclick="toggleAioChat()">
@@ -534,17 +453,39 @@
             </div>
             <span onclick="toggleAioChat()" style="cursor: pointer; font-size: 1.4rem;">✕</span>
         </div>
-        <div id="chat-messages"></div>
-        <div class="chat-footer" id="chat-input-container">
-            <input type="text" id="chat-input" placeholder="Type your message...">
-            <button class="chat-send-btn" onclick="botSend()"><i data-lucide="send" size="18"></i></button>
+        <div id="chatMessages"></div>
+        <div class="chat-footer">
+            <input type="text" id="chatUserInput" placeholder="Type your response...">
+            <button class="chat-send-btn" onclick="sendChatMessage()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
         </div>
     </div>
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-card">
+            <div class="modal-icon"><i data-lucide="check" size="32"></i></div>
+            <h3>Inquiry Submitted Successfully</h3>
+            <p>Specifications forwarded to engineering at info@aioautomation.in. We respond within 24 hours.</p>
+            <button class="btn-submit" style="padding:12px 30px; width:auto;" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-main">
+            <div><div class="footer-logo">AIO <span>AUTOMATION</span></div><p style="opacity: 0.6;">Precision industrial engineering for modern manufacturing.</p></div>
+            <div class="footer-col"><h4>Solutions</h4><ul class="f-links"><li>PLC Systems</li><li>SCADA architecture</li><li>Vision Systems</li></ul></div>
+            <div class="footer-col"><h4>Operations</h4><p style="opacity: 0.7;">Anand, Gujarat, India</p><p style="opacity: 0.7;">Hotline: +91 9898437843</p></div>
+        </div>
+        <div class="bottom-bar"><div>&copy; 2024 AIO Automation Solutions.</div></div>
+    </footer>
 
     <script>
         lucide.createIcons();
 
-        // SPA Navigation
+        // Navigation
         function showPage(pageId, element) {
             document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
@@ -561,9 +502,9 @@
             window.location.hash = pageId;
         }
 
-        // --- CHATBOT LOGIC ---
-        let botStep = 0;
-        let leadData = { name: '', company: '', vertical: '', specs: '', contact: '' };
+        // --- CHATBOT ENGINE ---
+        let chatState = 0;
+        let leadData = { name: '', domain: '', specs: '', phone: '' };
 
         function toggleAioChat() {
             const win = document.getElementById('aioChatWindow');
@@ -572,137 +513,114 @@
                 sessionStorage.setItem('aio_chat_closed', 'true');
             } else {
                 win.style.display = 'flex';
-                if(botStep === 0) startBot();
+                if (chatState === 0) processChat();
+                document.getElementById('chatUserInput').focus();
             }
         }
 
-        window.addEventListener('load', function() {
-            setTimeout(function() {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
                 const win = document.getElementById('aioChatWindow');
-                if (win && !sessionStorage.getItem('aio_chat_closed')) {
-                    win.style.display = 'flex';
-                    startBot();
-                }
+                if (!sessionStorage.getItem('aio_chat_closed')) { win.style.display = 'flex'; processChat(); }
             }, 3000);
         });
 
-        function addBubble(side, text) {
-            const container = document.getElementById('chat-messages');
+        // Enter Key Listener
+        document.getElementById('chatUserInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') { e.preventDefault(); sendChatMessage(); }
+        });
+
+        function addBubble(sender, html) {
+            const msgBox = document.getElementById('chatMessages');
             const div = document.createElement('div');
-            div.className = `chat-bubble ${side}-bubble`;
-            div.innerHTML = text;
-            container.appendChild(div);
-            container.scrollTop = container.scrollHeight;
+            div.className = `chat-bubble ${sender}-bubble`;
+            div.innerHTML = html;
+            msgBox.appendChild(div);
+            msgBox.scrollTop = msgBox.scrollHeight;
         }
 
-        function startBot() {
-            botStep = 1;
-            addBubble('bot', "Hello! Welcome to AIO Automation. I am your engineering consultation assistant. To begin, what is your <b>Full Name and Company Name</b>?");
-        }
-
-        function botSend() {
-            const input = document.getElementById('chat-input');
+        function sendChatMessage() {
+            const input = document.getElementById('chatUserInput');
             const val = input.value.trim();
             if (!val) return;
             addBubble('user', val);
             input.value = '';
-
-            if (botStep === 1) {
-                leadData.name = val;
-                botStep = 2;
-                setTimeout(() => {
-                    addBubble('bot', `Pleasure to connect, ${val.split(' ')[0]}! Which engineering domain does your facility require assistance with?`);
-                    const opts = ['PLC & SCADA', 'Panel Building', 'Pharma 21 CFR', 'Machine Vision', 'Retrofit'];
-                    const optContainer = document.createElement('div');
-                    optContainer.className = 'chat-options';
-                    opts.forEach(o => {
-                        const b = document.createElement('button');
-                        b.className = 'opt-btn';
-                        b.innerText = o;
-                        b.onclick = () => { leadData.vertical = o; addBubble('user', o); botNextStep(); };
-                        optContainer.appendChild(b);
-                    });
-                    document.getElementById('chat-messages').appendChild(optContainer);
-                }, 800);
-            } else if (botStep === 3) {
-                leadData.specs = val;
-                botStep = 4;
-                setTimeout(() => addBubble('bot', "Please provide your official <b>Contact Number</b> (with country code) and <b>Email</b>."), 800);
-            } else if (botStep === 4) {
-                leadData.contact = val;
-                finishBot();
-            }
+            processChat(val);
         }
 
-        function botNextStep() {
-            botStep = 3;
-            setTimeout(() => addBubble('bot', "Understood. Please briefly describe your machine or project specifications."), 800);
-        }
-
-        function finishBot() {
-            botStep = 5;
-            document.getElementById('chat-input-container').style.display = 'none';
-            const transcript = `Inquiry via AIO Bot:%0A- Client: ${leadData.name}%0A- Domain: ${leadData.vertical}%0A- Specs: ${leadData.specs}%0A- Contact: ${leadData.contact}`;
+        function processChat(userInput = '') {
+            const msgBox = document.getElementById('chatMessages');
             
             setTimeout(() => {
-                addBubble('bot', `✅ Thank you ${leadData.name.split(' ')[0]}! Your specifications have been compiled. How would you like to transmit this to our engineers?`);
-                const card = document.createElement('div');
-                card.className = 'dispatch-card';
-                card.innerHTML = `
-                    <a href="mailto:info@aioautomation.in?subject=Engineering Inquiry - ${leadData.name}&body=${transcript}" class="dispatch-link" style="background:#1d4ed8;">📧 Send via Email</a>
-                    <a href="https://wa.me/919898437843?text=${transcript}" target="_blank" class="dispatch-link" style="background:#25d366;">💬 Instant WhatsApp</a>
-                `;
-                document.getElementById('chat-messages').appendChild(card);
-            }, 1000);
+                switch(chatState) {
+                    case 0:
+                        addBubble('bot', "Hello! Welcome to AIO Automation. I am your automated engineering consultation assistant. To begin your assessment, what is your <b>Full Name and Company Name</b>?");
+                        chatState = 1;
+                        break;
+                    case 1:
+                        leadData.name = userInput;
+                        addBubble('bot', `Pleasure to connect, ${userInput.split(' ')[0]}! Which industrial engineering vertical does your facility require assistance with?`);
+                        const domains = ['PLC & SCADA Development', 'Control Panel / MCC Building', 'Pharma 21 CFR / OSD', 'Machine Vision Inspection', 'Retrofit & Modernization'];
+                        const opts = document.createElement('div');
+                        opts.className = 'chat-options';
+                        domains.forEach(d => {
+                            const btn = document.createElement('button');
+                            btn.className = 'opt-btn';
+                            btn.innerText = d;
+                            btn.onclick = () => { addBubble('user', d); leadData.domain = d; chatState = 3; processChat(); };
+                            opts.appendChild(btn);
+                        });
+                        msgBox.appendChild(opts);
+                        msgBox.scrollTop = msgBox.scrollHeight;
+                        chatState = 2; 
+                        break;
+                    case 3:
+                        addBubble('bot', "Got it. Please describe your machine or project scope (e.g. Siemens, Rockwell, line speed, or panel specs).");
+                        chatState = 4;
+                        break;
+                    case 4:
+                        leadData.specs = userInput;
+                        addBubble('bot', "Almost finished! Please enter your <b>Contact Mobile Number</b> (10 digits) so our engineering team can share the assessment.");
+                        chatState = 5;
+                        break;
+                    case 5:
+                        if (userInput.replace(/\D/g,'').length < 10) {
+                            addBubble('bot', "⚠️ Please enter a valid 10-digit mobile number.");
+                        } else {
+                            leadData.phone = userInput;
+                            const transcript = `AIO Bot Inquiry:%0A- Name: ${leadData.name}%0A- Vertical: ${leadData.domain}%0A- Specs: ${leadData.specs}%0A- Phone: ${leadData.phone}`;
+                            addBubble('bot', `✅ Thank you, ${leadData.name.split(' ')[0]}! Your technical inquiry has been compiled. How would you like to proceed?`);
+                            const dispatch = document.createElement('div');
+                            dispatch.className = 'dispatch-card';
+                            dispatch.innerHTML = `
+                                <a href="mailto:info@aioautomation.in?subject=Engineering Assessment - ${leadData.name}&body=${transcript}" class="dispatch-btn" style="background:#1d4ed8; color:white;">📧 Email to info@aioautomation.in</a>
+                                <a href="https://wa.me/919898437843?text=${transcript}" target="_blank" class="dispatch-btn" style="background:#25d366; color:white;">💬 WhatsApp +91 9898437843</a>
+                            `;
+                            msgBox.appendChild(dispatch);
+                            msgBox.scrollTop = msgBox.scrollHeight;
+                        }
+                        break;
+                }
+            }, 600);
         }
 
-        // --- AJAX FORM LOGIC ---
-        const contactForm = document.getElementById('contactForm');
-        const phoneInput = document.getElementById('userPhone');
-        const phoneError = document.getElementById('phoneError');
-        const modal = document.getElementById('successModal');
-
-        contactForm.addEventListener('submit', async function(e) {
+        // --- FORM LOGIC ---
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const phoneVal = phoneInput.value.trim().replace(/\D/g,'');
-            const code = document.getElementById('countryCode').value;
-            
-            if (code === "+91" && (phoneVal.length !== 10 || !/^[6-9]/.test(phoneVal))) {
-                phoneInput.classList.add('error');
-                phoneError.innerText = "Please enter a valid 10-digit mobile number";
-                phoneError.style.display = 'block';
-                phoneInput.focus();
-                return;
-            }
-
-            phoneInput.classList.remove('error');
-            phoneError.style.display = 'none';
             const btn = document.getElementById('submitBtn');
-            btn.disabled = true;
-            btn.innerText = "Transmitting Specifications...";
-
+            btn.innerText = "Transmitting...";
             try {
-                const response = await fetch("https://formspree.io/f/meaqzydn", {
+                const res = await fetch("https://formspree.io/f/meaqzydn", {
                     method: "POST",
-                    body: new FormData(contactForm),
+                    body: new FormData(e.target),
                     headers: { 'Accept': 'application/json' }
                 });
-                if (response.ok) {
-                    modal.style.display = 'flex';
-                    contactForm.reset();
-                }
-            } catch (err) { alert("Network error. Please email us directly."); }
-            finally {
-                btn.disabled = false;
-                btn.innerText = "Submit Technical Request";
-            }
+                if (res.ok) { document.getElementById('successModal').style.display = 'flex'; e.target.reset(); }
+            } catch (err) { alert("Network error. Contact info@aioautomation.in"); }
+            finally { btn.innerText = "Submit Technical Request"; }
         });
 
-        function closeModal() { modal.style.display = 'none'; }
-        window.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash.replace('#', '') || 'home';
-            showPage(hash);
-        });
+        function closeModal() { document.getElementById('successModal').style.display = 'none'; }
     </script>
 </body>
 </html>
