@@ -146,6 +146,14 @@
         
         .info-detail { display: flex; gap: 20px; margin-bottom: 35px; align-items: flex-start; }
         .info-icon { background: var(--ind-blue); padding: 12px; border-radius: 50%; color: white; }
+        .info-detail a { color: white; border-bottom: 1px solid transparent; }
+        .info-detail a:hover { color: var(--ind-blue); border-bottom-color: var(--ind-blue); }
+
+        .btn-whatsapp { 
+            display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: white; 
+            padding: 14px 25px; border-radius: 8px; font-weight: bold; text-transform: uppercase; margin-top: 20px;
+        }
+        .btn-whatsapp:hover { transform: scale(1.05); }
 
         .form-card { background: white; padding: 60px; border-radius: 15px; border: 1px solid var(--border); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px; }
@@ -155,6 +163,8 @@
         .input-group input:focus, .input-group textarea:focus { border-color: var(--ind-blue); background: white; }
         .btn-submit { background: var(--ind-blue); color: white; border: none; padding: 22px; font-weight: bold; text-transform: uppercase; border-radius: 8px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
         .btn-submit:hover { background: var(--ind-blue-hover); transform: translateY(-3px); }
+        
+        .status-msg { margin-top: 20px; font-weight: bold; color: var(--ind-green); display: none; }
 
         /* --- FOOTER --- */
         footer { background: var(--navy-deep); color: white; padding: 120px 6% 40px; border-top: 5px solid var(--ind-blue); }
@@ -177,16 +187,16 @@
 </head>
 <body>
 
-    <!-- TOP UTILITY BAR -->
-    <div class="utility-strip">
-        <div style="display: flex; gap: 40px;">
-            <div class="u-item"><i data-lucide="mail" size="18"></i> info@aioautomation.in</div>
-            <div class="u-item"><i data-lucide="phone" size="18"></i> +91 9898437843</div>
+    <!-- UTILITY TOP STRIP -->
+    <div class=\"utility-strip\">
+        <div style=\"display: flex; gap: 40px;\">
+            <div class=\"u-item\"><i data-lucide=\"mail\" size=\"18\"></i> <a href=\"mailto:info@aioautomation.in\" style=\"color:white\">info@aioautomation.in</a></div>
+            <div class=\"u-item\"><i data-lucide=\"phone\" size=\"18\"></i> <a href=\"tel:+919898437843\" style=\"color:white\">+91 9898437843</a></div>
         </div>
-        <div class="u-item"><i data-lucide="map-pin" size="18"></i> Anand, Gujarat | Serving Globally</div>
+        <div class=\"u-item\"><i data-lucide=\"map-pin\" size=\"18\"></i> Anand, Gujarat | Serving Globally</div>
     </div>
 
-    <!-- HEADER -->
+    <!-- MAIN HEADER -->
     <header>
         <div class="nav-inner">
             <div class="logo-box" onclick="showPage('home')">
@@ -207,7 +217,7 @@
 
     <main>
         
-        <!-- PAGE 1: HOME -->
+        <!-- SECTION: HOME -->
         <div id="home" class="page-view active">
             <section class="hero">
                 <div class="hero-inner">
@@ -244,10 +254,9 @@
             </section>
         </div>
 
-        <!-- PAGE 2: ABOUT US -->
+        <!-- SECTION: ABOUT US -->
         <div id="about" class="page-view">
             <section class="full-width bg-alt">
-                <!-- Our Heritage & Mission Intro -->
                 <div style="max-width: 1200px; margin: 0 auto 80px;">
                     <span class="section-tag">OUR HERITAGE & MISSION</span>
                     <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Engineering Precision, Total Reliability & Data Integrity</h2>
@@ -255,7 +264,6 @@
                     <p>We provide deep engineering capabilities across Siemens (TIA Portal), Rockwell CompactLogix, Mitsubishi FX series, and LabVIEW SCADA environments. Our core strength lies in our adherence to GAMP 5 and 21 CFR Part 11 electronic record compliance, specifically tailored for pharmaceutical OSD and sterile injectables.</p>
                 </div>
 
-                <!-- 3-Pillar Value Cards -->
                 <div class="grid-3">
                     <div class="card card-body">
                         <i data-lucide="layers" size="48"></i>
@@ -276,7 +284,7 @@
             </section>
         </div>
 
-        <!-- PAGE 3: SOLUTIONS -->
+        <!-- SECTION: SOLUTIONS -->
         <div id="solutions" class="page-view">
             <section class="full-width">
                 <span class="section-tag">Engineering Portfolio</span>
@@ -307,7 +315,7 @@
             </section>
         </div>
 
-        <!-- PAGE 4: CONTROL PANELS -->
+        <!-- SECTION: CONTROL PANELS -->
         <div id="panels" class="page-view">
             <section class="full-width bg-alt">
                 <div class="split-50">
@@ -330,7 +338,7 @@
             </section>
         </div>
 
-        <!-- PAGE 5: INDUSTRIES -->
+        <!-- SECTION: INDUSTRIES -->
         <div id="industries" class="page-view">
             <section class="full-width">
                 <div style="text-align: center; margin-bottom: 80px;">
@@ -384,40 +392,46 @@
             </section>
         </div>
 
-        <!-- PAGE 6: CONTACT -->
+        <!-- SECTION: CONTACT -->
         <div id="contact" class="page-view">
             <section class="full-width bg-alt">
                 <div class="contact-grid">
                     <div class="contact-info-card">
                         <h2>Let's Start Your Engineering Consultation</h2>
                         <p>Whether you require a greenfield plant design or a critical legacy retrofit, our principal engineers are ready to assist with a detailed technical assessment.</p>
+                        
                         <div class="info-detail">
                             <div class="info-icon"><i data-lucide="mail"></i></div>
-                            <div><strong>Official Email</strong><br>info@aioautomation.in</div>
+                            <div><strong>Official Email</strong><br><a href="mailto:info@aioautomation.in">info@aioautomation.in</a></div>
                         </div>
                         <div class="info-detail">
                             <div class="info-icon"><i data-lucide="phone"></i></div>
-                            <div><strong>Service Hotline</strong><br>+91 9898437843</div>
+                            <div><strong>Service & Support Hotline</strong><br><a href="tel:+919898437843">+91 9898437843</a></div>
                         </div>
                         <div class="info-detail">
                             <div class="info-icon"><i data-lucide="map-pin"></i></div>
-                            <div><strong>Headquarters</strong><br>Anand, Gujarat, India</div>
+                            <div><strong>Technical Operations</strong><br>Anand, Gujarat, India</div>
                         </div>
+
+                        <a href="https://wa.me/919898437843" target="_blank" class="btn-whatsapp">
+                            <i data-lucide="message-circle"></i> Direct WhatsApp Inquiry
+                        </a>
                     </div>
 
                     <div class="form-card">
-                        <form onsubmit="event.preventDefault(); alert('Engineering inquiry submitted. We will contact you within 24 hours.'); this.reset();">
+                        <!-- Replace YOUR_FORM_ID with your Formspree ID, or use action='mailto:info@aioautomation.in' -->
+                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
                             <div class="form-row">
-                                <div class="input-group"><label>Full Name</label><input type="text" placeholder="John Doe" required></div>
-                                <div class="input-group"><label>Company Name</label><input type="text" placeholder="Industrial Solutions Ltd" required></div>
+                                <div class="input-group"><label>Full Name</label><input type="text" name="name" placeholder="John Doe" required></div>
+                                <div class="input-group"><label>Company Name</label><input type="text" name="company" placeholder="Industrial Solutions Ltd" required></div>
                             </div>
                             <div class="form-row">
-                                <div class="input-group"><label>Official Email Address</label><input type="email" placeholder="john@company.com" required></div>
-                                <div class="input-group"><label>Phone Number</label><input type="tel" placeholder="+91 00000 00000" required></div>
+                                <div class="input-group"><label>Official Email Address</label><input type="email" name="email" placeholder="john@company.com" required></div>
+                                <div class="input-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+91 00000 00000" required></div>
                             </div>
                             <div class="input-group" style="margin-bottom: 25px;">
                                 <label>Project Requirement</label>
-                                <select>
+                                <select name="requirement">
                                     <option>PLC & SCADA Development</option>
                                     <option>Control Panel Manufacturing</option>
                                     <option>Machine Vision System</option>
@@ -425,8 +439,9 @@
                                     <option>Modernization / Retrofit</option>
                                 </select>
                             </div>
-                            <div class="input-group" style="margin-bottom: 40px;"><label>Technical Scope</label><textarea rows="6" placeholder="Describe your technical challenge..."></textarea></div>
+                            <div class="input-group" style="margin-bottom: 40px;"><label>Technical Scope / Message</label><textarea name="message" rows="6" placeholder="Describe your technical challenge..."></textarea></div>
                             <button type="submit" class="btn-submit">Submit Technical Request</button>
+                            <p id="formStatus" class="status-msg">Thank you! Your technical request has been routed to engineering at info@aioautomation.in. We will respond within 24 hours.</p>
                         </form>
                     </div>
                 </div>
@@ -474,10 +489,10 @@
     </footer>
 
     <script>
-        // Initialize Lucide Icons
+        // Initialize Icons
         lucide.createIcons();
 
-        // Single Page Architecture (SPA) Controller
+        // SPA View Controller
         function showPage(pageId, element) {
             const pages = document.querySelectorAll('.page-view');
             pages.forEach(p => p.classList.remove('active'));
@@ -499,6 +514,18 @@
             }
             
             window.location.hash = pageId;
+        }
+
+        // Form Success Handling (Logic for Status Message)
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('formStatus');
+        
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                // If using Formspree standard submit, the page will redirect.
+                // This logic is for an AJAX style fallback/visibility.
+                status.style.display = 'block';
+            });
         }
 
         window.addEventListener('popstate', () => {
