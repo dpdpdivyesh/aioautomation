@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIO Automation | Premium Industrial Engineering & Control Systems</title>
+    <title>AIO Automation | Engineering Precision & Data Integrity</title>
     <!-- Lucide Icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/umd/lucide.min.js"></script>
     <style>
@@ -122,7 +122,7 @@
         .section-tag { color: var(--ind-blue); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; display: block; }
         .section-title { font-size: 3.5rem; margin-bottom: 60px; }
 
-        /* --- SOLUTIONS GRID --- */
+        /* --- GRIDS & CARDS --- */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; }
         .card { background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--ind-blue); }
@@ -177,16 +177,16 @@
 </head>
 <body>
 
-    <!-- TOP ANNOUNCEMENT BAR -->
+    <!-- TOP UTILITY BAR -->
     <div class="utility-strip">
         <div style="display: flex; gap: 40px;">
-            <div class="u-item"><i data-lucide="mail" size=\"18\"></i> info@aioautomation.in</div>
-            <div class="u-item"><i data-lucide=\"phone\" size=\"18\"></i> +91 9898437843</div>
+            <div class="u-item"><i data-lucide="mail" size="18"></i> info@aioautomation.in</div>
+            <div class="u-item"><i data-lucide="phone" size="18"></i> +91 9898437843</div>
         </div>
-        <div class=\"u-item\"><i data-lucide=\"map-pin\" size=\"18\"></i> Anand, Gujarat | Serving Globally</div>
+        <div class="u-item"><i data-lucide="map-pin" size="18"></i> Anand, Gujarat | Serving Globally</div>
     </div>
 
-    <!-- MAIN HEADER -->
+    <!-- HEADER -->
     <header>
         <div class="nav-inner">
             <div class="logo-box" onclick="showPage('home')">
@@ -207,7 +207,7 @@
 
     <main>
         
-        <!-- SECTION: HOME -->
+        <!-- PAGE 1: HOME -->
         <div id="home" class="page-view active">
             <section class="hero">
                 <div class="hero-inner">
@@ -244,35 +244,39 @@
             </section>
         </div>
 
-        <!-- SECTION: ABOUT US -->
+        <!-- PAGE 2: ABOUT US -->
         <div id="about" class="page-view">
             <section class="full-width bg-alt">
-                <div style="text-align: center; max-width: 1200px; margin: 0 auto 80px;">
-                    <span class="section-tag">Our Legacy</span>
-                    <h2 style="font-size: 4rem;">Engineering Total Control</h2>
-                    <p style="font-size: 1.4rem;">Based in Anand, Gujarat, AIO Automation is a multidisciplined engineering firm dedicated to transforming legacy production facilities into modern, data-driven automated powerhouses.</p>
+                <!-- Our Heritage & Mission Intro -->
+                <div style="max-width: 1200px; margin: 0 auto 80px;">
+                    <span class="section-tag">OUR HERITAGE & MISSION</span>
+                    <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Engineering Precision, Total Reliability & Data Integrity</h2>
+                    <p>Established in Anand, Gujarat, AIO Automation is a multidisciplinary engineering firm dedicated to transforming industrial production through intelligent automation, rigorous panel engineering, and regulatory-compliant software architectures.</p>
+                    <p>We provide deep engineering capabilities across Siemens (TIA Portal), Rockwell CompactLogix, Mitsubishi FX series, and LabVIEW SCADA environments. Our core strength lies in our adherence to GAMP 5 and 21 CFR Part 11 electronic record compliance, specifically tailored for pharmaceutical OSD and sterile injectables.</p>
                 </div>
+
+                <!-- 3-Pillar Value Cards -->
                 <div class="grid-3">
                     <div class="card card-body">
+                        <i data-lucide="layers" size="48"></i>
+                        <h3>Turnkey Hardware & Panel Building</h3>
+                        <p>Specialized fabrication of custom Rittal/Schneider enclosures, VFD/Servo integration, clean ferrule labeling, and 100% FAT verification prior to field dispatch.</p>
+                    </div>
+                    <div class="card card-body">
                         <i data-lucide="shield-check" size="48"></i>
-                        <h3>Domain Authority</h3>
-                        <p>We combine electrical engineering with software logic to provide turnkey solutions that comply with international safety and quality standards.</p>
+                        <h3>Advanced Software & Compliance</h3>
+                        <p>Encrypted 21 CFR Part 11 audit trails, SQL database batch logging, automated reporting, and secure TDMS archiving for regulated industries.</p>
                     </div>
                     <div class="card card-body">
-                        <i data-lucide="zap" size="48"></i>
-                        <h3>Zero Downtime Retrofit</h3>
-                        <p>Our specialists are experts at migrating obsolete relay/PLC systems to next-gen controllers with minimal production disruption.</p>
-                    </div>
-                    <div class="card card-body">
-                        <i data-lucide="activity" size="48"></i>
-                        <h3>24/7 Field Support</h3>
-                        <p>Industrial lines never sleep. We provide round-the-clock priority technical support and Annual Maintenance Contracts (AMC).</p>
+                        <i data-lucide="eye" size="48"></i>
+                        <h3>Quality & High-Speed Inspection</h3>
+                        <p>Industrial machine vision integration, barcode/OCR verification, and precision high-speed servo or pneumatic defect rejection systems.</p>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- SECTION: SOLUTIONS -->
+        <!-- PAGE 3: SOLUTIONS -->
         <div id="solutions" class="page-view">
             <section class="full-width">
                 <span class="section-tag">Engineering Portfolio</span>
@@ -293,7 +297,6 @@
                         </div>
                     </div>
                     <div class="card">
-                        <!-- UPDATED MACHINE VISION IMAGE -->
                         <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=80" class="card-img" alt="Machine Vision Inspection">
                         <div class="card-body">
                             <h3>Machine Vision Systems</h3>
@@ -304,18 +307,17 @@
             </section>
         </div>
 
-        <!-- SECTION: CONTROL PANELS -->
+        <!-- PAGE 4: CONTROL PANELS -->
         <div id="panels" class="page-view">
             <section class="full-width bg-alt">
                 <div class="split-50">
                     <div>
-                        <!-- UPDATED CONTROL PANEL IMAGE -->
                         <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" class="split-img" alt="Industrial Control Panel">
                     </div>
                     <div>
-                        <span class="section-tag">Manufacturing Excellence</span>
+                        <span class="section-tag">Manufacturing Center</span>
                         <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Premium Control Panel Manufacturing</h2>
-                        <p>Our in-house fabrication facility produces high-density electrical enclosures tailored for extreme industrial environments. We utilize premium Rittal and Schneider hardware for long-term thermal stability and safety.</p>
+                        <p>Our in-house fabrication facility produces high-density electrical enclosures tailored for extreme industrial environments. We utilize premium Rittal and Schneider hardware for long-term thermal stability.</p>
                         <ul class="list-tech">
                             <li>Custom PLC / VFD Enclosures with Automated Wire Routing</li>
                             <li>MCC & PCC Power Distribution Centers with Rittal Accessories</li>
@@ -328,7 +330,7 @@
             </section>
         </div>
 
-        <!-- SECTION: INDUSTRIES -->
+        <!-- PAGE 5: INDUSTRIES -->
         <div id="industries" class="page-view">
             <section class="full-width">
                 <div style="text-align: center; margin-bottom: 80px;">
@@ -372,7 +374,6 @@
                         </div>
                     </div>
                     <div class="card">
-                        <!-- UPDATED INDUSTRIES VISION IMAGE -->
                         <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80" class="card-img" alt="Machine Vision & Defect Rejection">
                         <div class="card-body">
                             <h3>Machine Vision</h3>
@@ -383,7 +384,7 @@
             </section>
         </div>
 
-        <!-- SECTION: CONTACT -->
+        <!-- PAGE 6: CONTACT -->
         <div id="contact" class="page-view">
             <section class="full-width bg-alt">
                 <div class="contact-grid">
@@ -405,7 +406,7 @@
                     </div>
 
                     <div class="form-card">
-                        <form onsubmit="event.preventDefault(); alert('Engineering inquiry submitted. Our team will contact you within 24 hours.'); this.reset();">
+                        <form onsubmit="event.preventDefault(); alert('Engineering inquiry submitted. We will contact you within 24 hours.'); this.reset();">
                             <div class="form-row">
                                 <div class="input-group"><label>Full Name</label><input type="text" placeholder="John Doe" required></div>
                                 <div class="input-group"><label>Company Name</label><input type="text" placeholder="Industrial Solutions Ltd" required></div>
@@ -424,7 +425,7 @@
                                     <option>Modernization / Retrofit</option>
                                 </select>
                             </div>
-                            <div class="input-group" style="margin-bottom: 40px;"><label>Technical Scope / Requirements</label><textarea rows="6" placeholder="Describe your technical challenge..."></textarea></div>
+                            <div class="input-group" style="margin-bottom: 40px;"><label>Technical Scope</label><textarea rows="6" placeholder="Describe your technical challenge..."></textarea></div>
                             <button type="submit" class="btn-submit">Submit Technical Request</button>
                         </form>
                     </div>
@@ -448,7 +449,6 @@
                     <li>SCADA Systems</li>
                     <li>Machine Vision</li>
                     <li>Panel Building</li>
-                    <li>SQL Data Logging</li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -479,42 +479,33 @@
 
         // Single Page Architecture (SPA) Controller
         function showPage(pageId, element) {
-            // 1. Hide all views
             const pages = document.querySelectorAll('.page-view');
             pages.forEach(p => p.classList.remove('active'));
 
-            // 2. Clear nav active link styling
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(l => l.classList.remove('active'));
 
-            // 3. Show targeted view
             const target = document.getElementById(pageId);
             if (target) {
                 target.classList.add('active');
-                // Natural window scroll back to top
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // 4. Highlight Nav Link
             if (element) {
                 element.classList.add('active');
             } else {
-                // Programmatic trigger (e.g. from buttons or footer)
                 const link = document.querySelector(`.nav-link[onclick*="showPage('${pageId}'"]`);
                 if (link) link.classList.add('active');
             }
             
-            // 5. Update URL hash
             window.location.hash = pageId;
         }
 
-        // Handle browser history back/forward navigation
         window.addEventListener('popstate', () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             showPage(hash);
         });
 
-        // Sync view based on URL hash on page load
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             showPage(hash);
