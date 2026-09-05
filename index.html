@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIO Automation | All-In-One Industrial Engineering Solutions</title>
+    <title>AIO Automation | Premium Industrial Engineering & Control Systems</title>
     <!-- Lucide Icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/umd/lucide.min.js"></script>
     <style>
@@ -75,7 +75,7 @@
         }
 
         .logo-box { display: flex; flex-direction: column; cursor: pointer; }
-        .logo-main { font-size: 2rem; font-weight: 900; color: var(--ind-blue); letter-spacing: -1.5px; }
+        .logo-main { font-size: 2.2rem; font-weight: 900; color: var(--ind-blue); letter-spacing: -1.5px; }
         .logo-main span { color: var(--ind-green); }
         .logo-sub { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--navy-slate); font-weight: bold; margin-top: -2px; }
 
@@ -97,7 +97,7 @@
         }
         .btn-quote:hover { background: var(--ind-blue-hover); transform: translateY(-2px); }
 
-        /* --- VIEW CONTROLLER (SPA) --- */
+        /* --- SPA VIEW CONTROLLER --- */
         .page-view { display: none; width: 100%; animation: fadeIn 0.6s ease; }
         .page-view.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -116,13 +116,13 @@
         .hero h1 span { color: var(--ind-blue); }
         .hero p { font-size: 1.5rem; color: var(--text-dim); margin-bottom: 45px; max-width: 800px; }
 
-        /* --- LAYOUT WRAPPERS --- */
+        /* --- CONTENT WRAPPERS --- */
         .full-width { width: 100%; padding: 120px 6%; }
         .bg-alt { background: var(--bg-off-white); }
         .section-tag { color: var(--ind-blue); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; display: block; }
         .section-title { font-size: 3.5rem; margin-bottom: 60px; }
 
-        /* --- SOLUTIONS GRID (3-COLUMN) --- */
+        /* --- SOLUTIONS GRID --- */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; }
         .card { background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--ind-blue); }
@@ -159,7 +159,7 @@
         /* --- FOOTER --- */
         footer { background: var(--navy-deep); color: white; padding: 120px 6% 40px; border-top: 5px solid var(--ind-blue); }
         .footer-main { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 80px; margin-bottom: 80px; }
-        .footer-logo { font-size: 2rem; font-weight: 800; margin-bottom: 25px; display: block; color: var(--ind-blue); }
+        .footer-logo { font-size: 2.2rem; font-weight: 800; margin-bottom: 25px; display: block; color: var(--ind-blue); }
         .footer-logo span { color: var(--ind-green); }
         .footer-col h4 { margin-bottom: 35px; font-size: 1.3rem; color: white; text-transform: uppercase; letter-spacing: 1px; }
         .f-links { list-style: none; padding: 0; }
@@ -167,7 +167,6 @@
         .f-links li:hover { opacity: 1; color: var(--ind-blue); transform: translateX(8px); }
         .bottom-bar { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; display: flex; justify-content: space-between; font-size: 0.95rem; opacity: 0.6; }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 1100px) {
             .hero h1 { font-size: 3rem; }
             .split-50, .contact-grid, .footer-main { grid-template-columns: 1fr; gap: 50px; }
@@ -178,16 +177,16 @@
 </head>
 <body>
 
-    <!-- UTILITY STRIP -->
+    <!-- TOP ANNOUNCEMENT BAR -->
     <div class="utility-strip">
         <div style="display: flex; gap: 40px;">
-            <div class="u-item"><i data-lucide="mail" size="18"></i> info@aioautomation.in</div>
-            <div class="u-item"><i data-lucide="phone" size="18"></i> +91 9898437843</div>
+            <div class="u-item"><i data-lucide="mail" size=\"18\"></i> info@aioautomation.in</div>
+            <div class="u-item"><i data-lucide=\"phone\" size=\"18\"></i> +91 9898437843</div>
         </div>
-        <div class="u-item"><i data-lucide="map-pin" size="18"></i> Anand, Gujarat | Serving Globally</div>
+        <div class=\"u-item\"><i data-lucide=\"map-pin\" size=\"18\"></i> Anand, Gujarat | Serving Globally</div>
     </div>
 
-    <!-- STICKY HEADER -->
+    <!-- MAIN HEADER -->
     <header>
         <div class="nav-inner">
             <div class="logo-box" onclick="showPage('home')">
@@ -208,12 +207,12 @@
 
     <main>
         
-        <!-- PAGE 1: HOME -->
+        <!-- SECTION: HOME -->
         <div id="home" class="page-view active">
             <section class="hero">
                 <div class="hero-inner">
                     <h1>Turnkey Industrial <span>Automation</span> <br>& System Integration</h1>
-                    <p>Next-generation PLC, SCADA, and Electrical architecture for Pharmaceutical, Food, and Process industries. Engineering intelligence from first sensor to final dashboard.</p>
+                    <p>High-performance PLC, SCADA, and Machine Vision architecture for Pharmaceutical, Food, and Process industries. Engineering intelligence from first sensor to final dashboard.</p>
                     <div style="display: flex; gap: 20px;">
                         <a class="btn-quote" style="padding: 20px 50px; font-size: 1.1rem;" onclick="showPage('solutions')">Explore Solutions</a>
                         <a class="btn-quote" style="background: transparent; border: 2px solid white; padding: 20px 50px; font-size: 1.1rem;" onclick="showPage('contact')">Consult An Engineer</a>
@@ -225,7 +224,7 @@
                 <div class="split-50">
                     <div>
                         <span class="section-tag">Reliability & Performance</span>
-                        <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Optimizing OEE Through Intelligent Control</h2>
+                        <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Optimizing Productivity Through Intelligence</h2>
                         <p>AIO Automation bridges the gap between complex hardware logic and high-speed production requirements. We act as a single point of accountability for your entire automation lifecycle, ensuring 100% data integrity and system availability.</p>
                         <div class="grid-3" style="margin-top: 40px; grid-template-columns: 1fr 1fr;">
                             <div style="display: flex; gap: 15px;">
@@ -245,7 +244,7 @@
             </section>
         </div>
 
-        <!-- PAGE 2: ABOUT US -->
+        <!-- SECTION: ABOUT US -->
         <div id="about" class="page-view">
             <section class="full-width bg-alt">
                 <div style="text-align: center; max-width: 1200px; margin: 0 auto 80px;">
@@ -273,7 +272,7 @@
             </section>
         </div>
 
-        <!-- PAGE 3: SOLUTIONS -->
+        <!-- SECTION: SOLUTIONS -->
         <div id="solutions" class="page-view">
             <section class="full-width">
                 <span class="section-tag">Engineering Portfolio</span>
@@ -283,112 +282,114 @@
                         <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body">
                             <h3>PLC & HMI Programming</h3>
-                            <p>Development of high-availability logic for Siemens TIA Portal, Allen-Bradley Studio 5000, and Mitsubishi GX Works platforms.</p>
+                            <p>Development of high-availability logic for Siemens TIA Portal (S7-1200/1500), Allen-Bradley Studio 5000, and Mitsubishi GX Works.</p>
                         </div>
                     </div>
                     <div class="card">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body">
                             <h3>SCADA & SQL Logging</h3>
-                            <p>Centralized monitoring with encrypted SQL logging, automated batch reports, and real-time process historians.</p>
+                            <p>Centralized monitoring with encrypted SQL logging, automated batch reports, and real-time process historians for management dashboards.</p>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80" class="card-img">
+                        <!-- UPDATED MACHINE VISION IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=80" class="card-img" alt="Machine Vision Inspection">
                         <div class="card-body">
                             <h3>Machine Vision Systems</h3>
-                            <p>High-speed camera verification, 2D Matrix verification, OCR, and AI-driven defect rejection systems for 100% QA.</p>
+                            <p>Cognex In-Sight & DataMan Series, Omron Microscan, Keyence Vision Systems, High-Speed Rejection Logic, and 1D/2D Matrix Inspection for 100% QA.</p>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- PAGE 4: CONTROL PANELS -->
+        <!-- SECTION: CONTROL PANELS -->
         <div id="panels" class="page-view">
             <section class="full-width bg-alt">
                 <div class="split-50">
                     <div>
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" class="split-img">
+                        <!-- UPDATED CONTROL PANEL IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" class="split-img" alt="Industrial Control Panel">
                     </div>
                     <div>
-                        <span class="section-tag">Manufacturing Center</span>
+                        <span class="section-tag">Manufacturing Excellence</span>
                         <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Premium Control Panel Manufacturing</h2>
-                        <p>Our in-house fabrication facility produces high-density electrical enclosures tailored for extreme industrial environments. We utilize premium Rittal and Schneider hardware for long-term thermal stability.</p>
+                        <p>Our in-house fabrication facility produces high-density electrical enclosures tailored for extreme industrial environments. We utilize premium Rittal and Schneider hardware for long-term thermal stability and safety.</p>
                         <ul class="list-tech">
-                            <li>PLC / VFD Control Enclosures with Clean Routing</li>
-                            <li>MCC & PCC Power Distribution Centers (up to 4000A)</li>
-                            <li>Automatic Ferrule Labeling & Neat Ducting</li>
-                            <li>Integrated VFD / Servo Drive Logic Wiring</li>
-                            <li>Comprehensive Pre-Dispatch FAT (Factory Acceptance Test)</li>
+                            <li>Custom PLC / VFD Enclosures with Automated Wire Routing</li>
+                            <li>MCC & PCC Power Distribution Centers with Rittal Accessories</li>
+                            <li>Clean Ferrule Labeling & Precision Terminal Organization</li>
+                            <li>Integrated Servo Drive Logic & High-Speed Safety Relays</li>
+                            <li>Complete Pre-Dispatch FAT (Factory Acceptance Test)</li>
                         </ul>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- PAGE 5: INDUSTRIES -->
+        <!-- SECTION: INDUSTRIES -->
         <div id="industries" class="page-view">
             <section class="full-width">
                 <div style="text-align: center; margin-bottom: 80px;">
-                    <span class="section-tag">Vertical Expertise</span>
+                    <span class="section-tag">Domain Expertise</span>
                     <h2 style="font-size: 4rem;">Industries We Transform</h2>
                 </div>
                 <div class="grid-3">
-                    <!-- Cards 1-6 -->
                     <div class="card">
                         <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body">
                             <h3>Pharma - OSD</h3>
-                            <p>Oral Solid Dosage: High-speed tablet compression, granulator SCADA, and blister packing lines.</p>
+                            <p>Oral Solid Dosage: High-speed tablet compression, granulator SCADA, and blister packing line automation.</p>
                         </div>
                     </div>
                     <div class="card">
                         <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body">
                             <h3>Pharma - Injectables</h3>
-                            <p>Sterile cleanroom vial filling, ampoule processing, isolators, and 21 CFR Part 11 validation.</p>
+                            <p>Sterile cleanroom vial filling, ampoule processing, isolator systems, and 21 CFR Part 11 validation.</p>
                         </div>
                     </div>
                     <div class="card">
                         <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body">
                             <h3>FMCG & Food/Bev</h3>
-                            <p>High-speed bottling, robotic palletizing, conveyor sorting, and batch process control.</p>
+                            <p>High-speed bottling, robotic palletizing, conveyor sorting, and batch process control for high throughput.</p>
                         </div>
                     </div>
                     <div class="card">
                         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body">
                             <h3>Oil & Gas</h3>
-                            <p>SIL-rated ESD systems, hazardous area control panels, and pipeline telemetry SCADA.</p>
+                            <p>SIL-rated ESD systems, hazardous area control panels, reactor controls, and pipeline telemetry SCADA.</p>
                         </div>
                     </div>
                     <div class="card">
                         <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" class="card-img">
                         <div class="card-body">
                             <h3>Printing & Packaging</h3>
-                            <p>Web tension control, continuous motion cartoning, and precise labelling rejection logic.</p>
+                            <p>Multi-axis web tension control, continuous motion cartoning, and precise labelling rejection logic.</p>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80" class="card-img">
+                        <!-- UPDATED INDUSTRIES VISION IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80" class="card-img" alt="Machine Vision & Defect Rejection">
                         <div class="card-body">
                             <h3>Machine Vision</h3>
-                            <p>In-line camera OCR, defect rejection, dimensional inspection, and multi-axis robotics.</p>
+                            <p>In-line camera OCR, 2D matrix verification, dimensional inspection, and multi-camera quality verification.</p>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- PAGE 6: CONTACT -->
+        <!-- SECTION: CONTACT -->
         <div id="contact" class="page-view">
             <section class="full-width bg-alt">
                 <div class="contact-grid">
                     <div class="contact-info-card">
                         <h2>Let's Start Your Engineering Consultation</h2>
-                        <p>Whether you require a greenfield plant design or a critical legacy retrofit, our principal engineers are ready to assist.</p>
+                        <p>Whether you require a greenfield plant design or a critical legacy retrofit, our principal engineers are ready to assist with a detailed technical assessment.</p>
                         <div class="info-detail">
                             <div class="info-icon"><i data-lucide="mail"></i></div>
                             <div><strong>Official Email</strong><br>info@aioautomation.in</div>
@@ -404,13 +405,13 @@
                     </div>
 
                     <div class="form-card">
-                        <form onsubmit="event.preventDefault(); alert('Engineering inquiry submitted. We will contact you within 24 hours.'); this.reset();">
+                        <form onsubmit="event.preventDefault(); alert('Engineering inquiry submitted. Our team will contact you within 24 hours.'); this.reset();">
                             <div class="form-row">
                                 <div class="input-group"><label>Full Name</label><input type="text" placeholder="John Doe" required></div>
                                 <div class="input-group"><label>Company Name</label><input type="text" placeholder="Industrial Solutions Ltd" required></div>
                             </div>
                             <div class="form-row">
-                                <div class="input-group"><label>Official Email</label><input type="email" placeholder="john@company.com" required></div>
+                                <div class="input-group"><label>Official Email Address</label><input type="email" placeholder="john@company.com" required></div>
                                 <div class="input-group"><label>Phone Number</label><input type="tel" placeholder="+91 00000 00000" required></div>
                             </div>
                             <div class="input-group" style="margin-bottom: 25px;">
@@ -423,7 +424,7 @@
                                     <option>Modernization / Retrofit</option>
                                 </select>
                             </div>
-                            <div class="input-group" style="margin-bottom: 40px;"><label>Technical Scope</label><textarea rows="6" placeholder="Describe your technical challenge..."></textarea></div>
+                            <div class="input-group" style="margin-bottom: 40px;"><label>Technical Scope / Requirements</label><textarea rows="6" placeholder="Describe your technical challenge..."></textarea></div>
                             <button type="submit" class="btn-submit">Submit Technical Request</button>
                         </form>
                     </div>
@@ -438,7 +439,7 @@
         <div class="footer-main">
             <div>
                 <span class="footer-logo">AIO <span>AUTOMATION</span></span>
-                <p style="opacity: 0.6; margin-top: 20px;">Precision engineering and intelligent automation for modern manufacturing. Trusted partner for high-compliance industrial infrastructure.</p>
+                <p style="opacity: 0.6; margin-top: 20px;">Precision engineering and intelligent automation for modern manufacturing. Your trusted partner for high-compliance industrial infrastructure in Anand, Gujarat.</p>
             </div>
             <div class="footer-col">
                 <h4>Solutions</h4>
@@ -447,6 +448,7 @@
                     <li>SCADA Systems</li>
                     <li>Machine Vision</li>
                     <li>Panel Building</li>
+                    <li>SQL Data Logging</li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -472,31 +474,32 @@
     </footer>
 
     <script>
-        // Initialize Icons
+        // Initialize Lucide Icons
         lucide.createIcons();
 
         // Single Page Architecture (SPA) Controller
         function showPage(pageId, element) {
-            // 1. Hide all pages
+            // 1. Hide all views
             const pages = document.querySelectorAll('.page-view');
             pages.forEach(p => p.classList.remove('active'));
 
-            // 2. Clear nav active states
+            // 2. Clear nav active link styling
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(l => l.classList.remove('active'));
 
-            // 3. Show target page
+            // 3. Show targeted view
             const target = document.getElementById(pageId);
             if (target) {
                 target.classList.add('active');
+                // Natural window scroll back to top
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // 4. Highlight Nav Item
+            // 4. Highlight Nav Link
             if (element) {
                 element.classList.add('active');
             } else {
-                // programmatic navigation
+                // Programmatic trigger (e.g. from buttons or footer)
                 const link = document.querySelector(`.nav-link[onclick*="showPage('${pageId}'"]`);
                 if (link) link.classList.add('active');
             }
@@ -505,13 +508,13 @@
             window.location.hash = pageId;
         }
 
-        // Handle browser history navigation
+        // Handle browser history back/forward navigation
         window.addEventListener('popstate', () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             showPage(hash);
         });
 
-        // Load correct page on startup
+        // Sync view based on URL hash on page load
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             showPage(hash);
