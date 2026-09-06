@@ -3,7 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIO Automation | Precision Engineering Solutions — Industrial Automation, PLC/SCADA &amp; Pharma Compliance</title>
+<title>AIO Automation | PLC, SCADA &amp; Panel Engineering, India</title>
+<meta name="description" content="Industrial automation for pharma &amp; FMCG plants — PLC/SCADA programming, control panel manufacturing, machine vision &amp; 21 CFR Part 11 compliance.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AIO Automation",
+  "alternateName": "AIO Automation - Industrial Automation & PLC/SCADA Engineering",
+  "url": "https://www.aioautomation.in",
+  "description": "AIO Automation provides PLC/SCADA programming, control panel design and manufacturing, machine retrofitting, and vision inspection systems for pharmaceutical, FMCG, and process manufacturing plants, with GAMP 5 and 21 CFR Part 11 compliant automation.",
+  "priceRange": "$$",
+  "telephone": "+91-9898437843",
+  "email": "info@aioautomation.in",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Anand",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  },
+  "areaServed": { "@type": "Country", "name": "India" },
+  "sameAs": ["https://www.linkedin.com/company/aioautomation/"],
+  "founder": {
+    "@type": "Person",
+    "name": "Divyesh Sakhia",
+    "jobTitle": "Founder & Principal Automation Engineer"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Industrial Automation Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PLC & SCADA Programming", "description": "PLC and SCADA/HMI programming for Siemens, Rockwell, Mitsubishi, and Delta platforms." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Control Panel Design & Manufacturing", "description": "Custom control panel, MCC, and PCC fabrication with FAT/SAT verification." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Machine Vision & Inspection Systems", "description": "Camera-based inspection, barcode/QR reading, and vision-guided robotics integration." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "21 CFR Part 11 Compliant SCADA", "description": "Audit-trail and e-signature enabled SCADA systems for pharmaceutical OSD and injectable plants." } }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AIO Automation",
+  "url": "https://www.aioautomation.in",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-9898437843",
+    "contactType": "sales",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Hindi", "Gujarati"]
+  }
+}
+</script>
 <style>
 :root{
   --navy:#0b1120;
@@ -160,6 +212,18 @@ nav{display:flex;gap:1.4rem;align-items:center;flex-wrap:nowrap;}
 .phone-group input{flex-grow:1;}
 .btn-submit{background:var(--blue);color:#fff;border:none;padding:17px;font-weight:bold;border-radius:8px;cursor:pointer;width:100%;font-size:.98rem;margin-top:8px;}
 .btn-submit:hover{background:var(--blue-hover);}
+.rfq-progress{display:flex;gap:6px;margin-bottom:30px;flex-wrap:wrap;}
+.rfq-progress .step{flex:1;min-width:110px;text-align:center;font-size:.78rem;font-weight:bold;padding:9px 6px;border-radius:6px;background:var(--off-white);color:#94a3b8;border:1px solid var(--border);}
+.rfq-progress .step.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+.rfq-step h3{margin-bottom:18px;font-size:1.2rem;}
+.option-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px;}
+.option-grid label{display:flex;align-items:center;gap:10px;padding:14px;border:1px solid var(--border);border-radius:8px;cursor:pointer;background:var(--off-white);font-size:.94rem;transition:var(--transition);}
+.option-grid label:has(input:checked){border-color:var(--blue);background:#eff6ff;}
+.rfq-nav{display:flex;justify-content:space-between;gap:14px;margin-top:20px;}
+.rfq-back{background:transparent;border:2px solid var(--border);color:var(--text-dark);padding:14px 22px;border-radius:8px;font-weight:600;cursor:pointer;}
+.rfq-next{background:var(--blue);color:#fff;border:none;padding:14px 30px;border-radius:8px;font-weight:600;cursor:pointer;}
+.rfq-next:hover,.rfq-back:hover{opacity:.85;}
+@media (max-width:600px){.option-grid{grid-template-columns:1fr;}.rfq-progress .step{min-width:80px;font-size:.7rem;}}
 
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(5px);z-index:10000;display:none;align-items:center;justify-content:center;}
 .modal-card{background:#fff;width:100%;max-width:460px;padding:42px;border-radius:14px;text-align:center;}
@@ -262,11 +326,17 @@ footer h4{color:#fff;font-size:.9rem;letter-spacing:1px;text-transform:uppercase
 <div id="home" class="page-view active">
   <section class="hero">
     <div>
-      <h1>Industrial automation engineered for <span>zero-defect production</span></h1>
-      <p>PLC, SCADA, and machine vision architecture built end-to-end from Anand, Gujarat — vendor-agnostic control systems for pharma, FMCG, oil &amp; gas, and modernization projects across India and beyond.</p>
+      <span class="section-tag" style="color:#93c5fd;">INDUSTRIAL AUTOMATION · ANAND, GUJARAT</span>
+      <h1>Automation engineering plant heads trust with their <span>uptime</span></h1>
+      <p>AIO Automation designs, programs, and manufactures PLC/SCADA control systems, custom control panels, and machine vision inspection lines for pharmaceutical, FMCG, and process manufacturing plants — engineered for GAMP 5 and 21 CFR Part 11 compliance from day one.</p>
+      <div class="hero-metrics" style="display:flex;gap:36px;flex-wrap:wrap;margin:28px 0;">
+        <div><strong style="font-size:1.6rem;color:#fff;display:block;">12+</strong><span style="color:var(--text-dim);font-size:.88rem;">Years in pharma &amp; process automation</span></div>
+        <div><strong style="font-size:1.6rem;color:#fff;display:block;">4</strong><span style="color:var(--text-dim);font-size:.88rem;">PLC platforms supported natively</span></div>
+        <div><strong style="font-size:1.6rem;color:#fff;display:block;">100%</strong><span style="color:var(--text-dim);font-size:.88rem;">FAT/SAT verified panel builds</span></div>
+      </div>
       <div style="display:flex;gap:20px;flex-wrap:wrap;">
-        <a onclick="showPage('solutions')" class="btn-primary">Explore Solutions</a>
-        <a onclick="showPage('contact')" class="btn-outline">Consult an Engineer</a>
+        <a onclick="showPage('contact')" class="btn-primary">Request a Technical Quote</a>
+        <a onclick="showPage('solutions')" class="btn-outline">Explore Engineering Capabilities</a>
       </div>
     </div>
   </section>
@@ -614,29 +684,101 @@ footer h4{color:#fff;font-size:.9rem;letter-spacing:1px;text-transform:uppercase
       </div>
       <div class="form-card">
         <form id="contactForm">
-          <div class="form-row">
-            <div class="input-group"><label>Full Name</label><input type="text" name="name" required></div>
-            <div class="input-group"><label>Company</label><input type="text" name="company" required></div>
-          </div>
-          <div class="form-row">
-            <div class="input-group"><label>Email Address</label><input type="email" id="userEmail" name="email" required></div>
-            <div class="input-group">
-              <label>Phone Number</label>
-              <div class="phone-group">
-                <select id="countryCode" name="country_code"></select>
-                <input type="tel" id="userPhone" name="phone" placeholder="98984 37843" required>
+          <div class="rfq-wizard" id="rfqWizard">
+            <div class="rfq-progress">
+              <div class="step active" data-step="1">1. Project Type</div>
+              <div class="step" data-step="2">2. Technical Specs</div>
+              <div class="step" data-step="3">3. Timeline</div>
+              <div class="step" data-step="4">4. Contact Details</div>
+            </div>
+
+            <div class="rfq-step" data-step="1">
+              <h3>What does your project involve?</h3>
+              <div class="option-grid">
+                <label><input type="radio" name="project_type" value="New PLC/SCADA System" required> New PLC/SCADA System</label>
+                <label><input type="radio" name="project_type" value="Machine Retrofit / Upgrade"> Machine Retrofit / Upgrade</label>
+                <label><input type="radio" name="project_type" value="Control Panel Fabrication"> Control Panel Fabrication</label>
+                <label><input type="radio" name="project_type" value="Vision Inspection System"> Vision Inspection System</label>
+                <label><input type="radio" name="project_type" value="AMC / Troubleshooting Support"> AMC / Troubleshooting Support</label>
+                <label><input type="radio" name="project_type" value="Hardware Supply Only"> Hardware Supply Only</label>
               </div>
-              <div id="phoneError" style="color:#ef4444;font-size:.8rem;margin-top:4px;display:none;"></div>
+              <div class="rfq-nav" style="justify-content:flex-end;"><button type="button" class="rfq-next">Continue &rarr;</button></div>
+            </div>
+
+            <div class="rfq-step" data-step="2" hidden>
+              <h3>Technical Details</h3>
+              <div class="input-group" style="margin-bottom:16px;">
+                <label>Preferred PLC/Controller Brand</label>
+                <select name="controller_pref">
+                  <option value="">No preference / Advise me</option>
+                  <option>Siemens</option><option>Rockwell / Allen-Bradley</option>
+                  <option>Mitsubishi</option><option>Delta</option><option>Other</option>
+                </select>
+              </div>
+              <div class="input-group" style="margin-bottom:16px;">
+                <label>Approximate I/O Count</label>
+                <select name="io_count">
+                  <option value="">Not sure yet</option>
+                  <option>Under 50 I/O</option><option>50–150 I/O</option>
+                  <option>150–500 I/O</option><option>500+ I/O / Multi-panel</option>
+                </select>
+              </div>
+              <div class="input-group" style="margin-bottom:8px;">
+                <label>Compliance Requirement</label>
+                <select name="compliance">
+                  <option value="None specified">None specified</option>
+                  <option>21 CFR Part 11</option><option>GAMP 5</option>
+                  <option>Both</option><option>Not sure — please advise</option>
+                </select>
+              </div>
+              <div class="rfq-nav"><button type="button" class="rfq-back">&larr; Back</button><button type="button" class="rfq-next">Continue &rarr;</button></div>
+            </div>
+
+            <div class="rfq-step" data-step="3" hidden>
+              <h3>Timeline &amp; Scope</h3>
+              <div class="input-group" style="margin-bottom:16px;">
+                <label>Project Timeline</label>
+                <select name="timeline">
+                  <option>Immediate / Urgent (within 4 weeks)</option>
+                  <option>1–3 months</option><option>3–6 months</option>
+                  <option>Planning stage / Budgeting</option>
+                </select>
+              </div>
+              <div class="input-group" style="margin-bottom:16px;">
+                <label>Number of Machines / Lines Involved</label>
+                <input type="number" name="machine_count" min="1" placeholder="e.g., 3">
+              </div>
+              <div class="input-group" style="margin-bottom:8px;">
+                <label>Anything else we should know?</label>
+                <textarea name="message" rows="3" placeholder="Existing hardware, plant location, specific constraints..."></textarea>
+              </div>
+              <div class="rfq-nav"><button type="button" class="rfq-back">&larr; Back</button><button type="button" class="rfq-next">Continue &rarr;</button></div>
+            </div>
+
+            <div class="rfq-step" data-step="4" hidden>
+              <h3>Where should we send the quote?</h3>
+              <div class="form-row">
+                <div class="input-group"><label>Full Name</label><input type="text" name="name" required></div>
+                <div class="input-group"><label>Company</label><input type="text" name="company" required></div>
+              </div>
+              <div class="form-row">
+                <div class="input-group"><label>Designation</label><input type="text" name="designation" placeholder="e.g., Plant Head, Procurement Manager"></div>
+                <div class="input-group"><label>Plant Location / City</label><input type="text" name="location"></div>
+              </div>
+              <div class="form-row">
+                <div class="input-group"><label>Work Email</label><input type="email" id="userEmail" name="email" required></div>
+                <div class="input-group">
+                  <label>Phone Number</label>
+                  <div class="phone-group">
+                    <select id="countryCode" name="country_code"></select>
+                    <input type="tel" id="userPhone" name="phone" placeholder="98984 37843" required>
+                  </div>
+                  <div id="phoneError" style="color:#ef4444;font-size:.8rem;margin-top:4px;display:none;"></div>
+                </div>
+              </div>
+              <div class="rfq-nav"><button type="button" class="rfq-back">&larr; Back</button><button type="submit" id="submitBtn" class="btn-submit" style="width:auto;">Submit Request for Quotation</button></div>
             </div>
           </div>
-          <div class="input-group" style="margin-bottom:18px;">
-            <label>Requirement</label>
-            <select name="requirement">
-              <option>PLC &amp; SCADA Development</option><option>Control Panel Manufacturing</option><option>Machine Vision System</option><option>Pharma OSD Line</option><option>Pharma Injectables Line</option><option>Retrofit / Modernization</option>
-            </select>
-          </div>
-          <div class="input-group" style="margin-bottom:26px;"><label>Scope</label><textarea name="message" rows="4"></textarea></div>
-          <button type="submit" id="submitBtn" class="btn-submit">Submit Technical Request</button>
         </form>
       </div>
     </div>
@@ -836,12 +978,48 @@ contactForm.addEventListener('submit', async function(e){
   btn.innerText = "Transmitting Specifications...";
   try{
     const response = await fetch("https://formspree.io/f/meaqzydn", { method:"POST", body:new FormData(contactForm), headers:{ 'Accept':'application/json' } });
-    if(response.ok){ modal.style.display = 'flex'; contactForm.reset(); }
+    if(response.ok){ modal.style.display = 'flex'; contactForm.reset(); resetRfqWizard(); }
   } catch(err){ alert("Network error. Please email us directly."); }
-  finally{ btn.disabled = false; btn.innerText = "Submit Technical Request"; }
+  finally{ btn.disabled = false; btn.innerText = "Submit Request for Quotation"; }
 });
 
 function closeModal(){ modal.style.display = 'none'; }
+
+/* ===================== RFQ MULTI-STEP WIZARD ===================== */
+(function(){
+  const wizard = document.getElementById('rfqWizard');
+  if(!wizard) return;
+  const steps = wizard.querySelectorAll('.rfq-step');
+  const progressSteps = wizard.querySelectorAll('.rfq-progress .step');
+  let current = 1;
+
+  function showStep(n){
+    steps.forEach(s => s.hidden = (parseInt(s.dataset.step) !== n));
+    progressSteps.forEach(p => p.classList.toggle('active', parseInt(p.dataset.step) <= n));
+    current = n;
+  }
+
+  wizard.querySelectorAll('.rfq-next').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const activeStep = wizard.querySelector(`.rfq-step[data-step="${current}"]`);
+      const required = activeStep.querySelectorAll('[required]');
+      for(const field of required){
+        if(!field.checkValidity()){ field.reportValidity(); return; }
+      }
+      if(current === 1 && !activeStep.querySelector('input[name="project_type"]:checked')){
+        alert('Please select a project type to continue.');
+        return;
+      }
+      showStep(current + 1);
+    });
+  });
+
+  wizard.querySelectorAll('.rfq-back').forEach(btn => {
+    btn.addEventListener('click', () => showStep(current - 1));
+  });
+
+  window.resetRfqWizard = () => showStep(1);
+})();
 
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#','') || 'home';
