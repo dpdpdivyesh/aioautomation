@@ -48,6 +48,18 @@ nav{display:flex;gap:1.4rem;align-items:center;flex-wrap:nowrap;}
 .btn-quote{background:var(--blue);color:#fff !important;padding:11px 20px;border-radius:6px;font-weight:bold;font-size:.86rem;flex-shrink:0;}
 .btn-quote:hover{background:var(--blue-hover);}
 
+.hamburger-btn{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;flex-shrink:0;}
+.hamburger-btn span{display:block;width:20px;height:2px;background:var(--navy);border-radius:2px;transition:var(--transition);}
+.hamburger-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger-btn.open span:nth-child(2){opacity:0;}
+.hamburger-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+#mobileNav{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--border);box-shadow:0 12px 24px rgba(0,0,0,.08);max-height:0;overflow:hidden;transition:max-height .3s ease;}
+#mobileNav.open{display:flex;max-height:600px;}
+.mobile-nav-link{padding:16px 6%;font-weight:bold;color:var(--navy-slate);border-bottom:1px solid var(--border);font-size:.98rem;}
+.mobile-nav-link.active{color:var(--blue);}
+.mobile-nav-divider{height:8px;background:var(--off-white);}
+
 .btn-primary,.btn-outline{font-weight:600;padding:14px 28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;gap:8px;}
 .btn-primary{background:var(--blue) !important;color:#fff !important;border:2px solid var(--blue) !important;box-shadow:0 4px 15px rgba(29,78,216,.3);}
 .btn-primary:hover{background:var(--blue-hover) !important;transform:translateY(-2px);}
@@ -178,8 +190,14 @@ footer h4{color:#fff;font-size:.9rem;letter-spacing:1px;text-transform:uppercase
   .split-50,.contact-grid,.footer-main,.form-row,.grid-2{grid-template-columns:1fr;gap:34px;}
   .founder-card{grid-template-columns:1fr;text-align:center;}
   .founder-avatar{margin:0 auto;}
-  nav,.utility-strip{display:none;}
+  #nav-items,.utility-strip{display:none;}
+  .hamburger-btn{display:flex;}
+  .btn-quote{padding:9px 14px;font-size:.8rem;}
   .bottom-bar{flex-direction:column;gap:10px;}
+}
+@media (min-width:1201px){
+  .hamburger-btn{display:none;}
+  #mobileNav{display:none !important;}
 }
 </style>
 </head>
@@ -215,7 +233,22 @@ footer h4{color:#fff;font-size:.9rem;letter-spacing:1px;text-transform:uppercase
       <a class="nav-link" onclick="showPage('contact', this)">Contact Us</a>
     </nav>
     <a class="btn-quote" onclick="showPage('contact')">Get a Quote</a>
+    <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav id="mobileNav">
+    <a class="mobile-nav-link active" onclick="showPage('home', this); closeMobileMenu();">Home</a>
+    <a class="mobile-nav-link" onclick="showPage('about', this); closeMobileMenu();">About Us</a>
+    <a class="mobile-nav-link" onclick="showPage('solutions', this); closeMobileMenu();">Solutions &amp; Hardware</a>
+    <a class="mobile-nav-link" onclick="showPage('panels', this); closeMobileMenu();">Control Panels</a>
+    <a class="mobile-nav-link" onclick="showPage('industries', this); closeMobileMenu();">Industries</a>
+    <a class="mobile-nav-link" onclick="showPage('lifecycle', this); closeMobileMenu();">Lifecycle Services</a>
+    <a class="mobile-nav-link" onclick="showPage('contact', this); closeMobileMenu();">Contact Us</a>
+    <div class="mobile-nav-divider"></div>
+    <a class="mobile-nav-link" href="mailto:info@aioautomation.in">info@aioautomation.in</a>
+    <a class="mobile-nav-link" href="tel:+919898437843">+91 9898437843</a>
+  </nav>
 </header>
 
 <main>
@@ -683,12 +716,21 @@ renderIcons();
 
 function showPage(pageId, element){
   document.querySelectorAll('.page-view').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+  document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(l=>l.classList.remove('active'));
   const target = document.getElementById(pageId);
   if(target){ target.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
   if(element) element.classList.add('active');
-  else { const link = document.querySelector(`.nav-link[onclick*="showPage('${pageId}'"]`); if(link) link.classList.add('active'); }
+  document.querySelectorAll(`.nav-link[onclick*="showPage('${pageId}'"], .mobile-nav-link[onclick*="showPage('${pageId}'"]`).forEach(l=>l.classList.add('active'));
   window.location.hash = pageId;
+}
+
+function toggleMobileMenu(){
+  document.getElementById('mobileNav').classList.toggle('open');
+  document.getElementById('hamburgerBtn').classList.toggle('open');
+}
+function closeMobileMenu(){
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamburgerBtn').classList.remove('open');
 }
 
 /* ---------- CUSTOMER STRIP — manual scroll only, no auto-rotation ---------- */
